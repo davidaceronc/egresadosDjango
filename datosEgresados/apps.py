@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class DatospersonalesConfig(AppConfig):
-    name = 'datosPersonales'
+class DatosEgresadosConfig(AppConfig):
+    name = 'datosEgresados'
