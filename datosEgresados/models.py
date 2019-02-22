@@ -106,3 +106,83 @@ class Egresado(models.Model):
 
     def __str__(self):
         return self.nombres + " " + self.primer_apellido + " " + self.segundo_apellido
+
+    
+class Titulo(models.Model):
+    niveles = (
+        (1, 'Pregrado'),
+        (2, 'Especializacion'),
+        (3, 'Maestria'),
+        (4, 'Doctorado'),
+        (5, 'Post-doctorado'),
+        (6, 'MBA'),
+        (7, 'Curso'),
+        (8, 'Seminario'),
+        (9, 'Diplomado'),
+        (10, 'Otro'),
+    )
+
+    instituciones = (
+        (1, 'SENA'),
+        (2, 'USB'),
+    )
+
+    id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
+    titulo = models.CharField(max_length=200)
+    nivel_academico = models.CharField(max_length=50, choices=niveles)
+    institucion = models.CharField(max_length=200 choices=instituciones)
+    fecha_graduacion = models.DateField()
+
+    def __str__(self):
+        return self.titulo
+
+class Publicacion(models.Model):
+    tipos = (
+        (1, 'Libro'),
+        (2, 'Capítulo'),
+        (3, 'Revista'),
+        (4, 'Articulo Impreso'),
+        (5, 'Articulo Indexado'),
+    )
+
+    id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
+    titulo_publicacion = models.CharField(max_length=200)
+    tipo_publicacion = models.CharField(max_length=50, choices=tipos)
+    fecha_publicacion = models.DateField()
+
+    def __str__(self):
+        return self.titulo_publicacion
+
+class Reconocimientos(models.Model):
+    instituciones = (
+        (1, 'SENA'),
+        (2, 'USB'),
+    )
+
+    id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
+    titulo_reconocimiento = models.CharField(max_length=200)
+    institucion = models.CharField(max_length=200 choices=instituciones)
+    fecha_reconocimiento = models.DateField()
+
+    def __str__(self):
+        return self.titulo_reconocimiento
+
+class Participaciones(models.Model):
+    redes = (
+        (1, 'Asociación Artistica'),
+        (2, 'Asociación Téctnica/Tecnológica'),
+        (3, 'Asociación Científica'),
+        (4, 'Asociación Profesional'),
+        (5, 'Asociación Sector Productiva'),
+        (6, 'Comunidad Académica'),
+        (7, 'Asociación Sector Financiero'),
+        (8, 'Otra'),
+    )
+
+    id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
+    red = models.CharField(max_length=50, choices=redes)
+    descripcion = models.CharField(max_length=200)
+    internacional = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.descripcion
