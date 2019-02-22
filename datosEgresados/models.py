@@ -130,7 +130,7 @@ class Titulo(models.Model):
     id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
     titulo = models.CharField(max_length=200)
     nivel_academico = models.CharField(max_length=50, choices=niveles)
-    institucion = models.CharField(max_length=200 choices=instituciones)
+    institucion = models.CharField(max_length=200, choices=instituciones)
     fecha_graduacion = models.DateField()
 
     def __str__(self):
@@ -161,7 +161,7 @@ class Reconocimientos(models.Model):
 
     id_egresado = models.ForeignKey(SituacionLaboralActual, on_delete="CASCADE")
     titulo_reconocimiento = models.CharField(max_length=200)
-    institucion = models.CharField(max_length=200 choices=instituciones)
+    institucion = models.CharField(max_length=200, choices=instituciones)
     fecha_reconocimiento = models.DateField()
 
     def __str__(self):
