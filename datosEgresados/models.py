@@ -75,6 +75,16 @@ class Egresado(models.Model):
         (5, '5'),
         (6, '6'),
     )
+
+    experiencia = (
+        (0, 'menos de 1 año'),
+        (1, '1 año'),
+        (2, '2 años'),   
+        (3, '3 años'),
+        (4, '4 años'),
+        (5, '5 años'),
+        (6, '6 años o mas'),
+    )
     afinidad = ((True, 'Si'), (False, 'No'))
 
     id = models.CharField(max_length=15, primary_key=True)
@@ -101,7 +111,7 @@ class Egresado(models.Model):
     ext = models.IntegerField()
     cargo = models.CharField(max_length=50)
     id_rango_salarial = models.ForeignKey(RangoSalarial,on_delete="PROTECTED")
-    id_experiencia = models.ForeignKey(Experiencia,on_delete="PROTECTED")
+    id_experiencia = models.IntegerField(choises = experiencia)
     nombre_jefe = models.CharField(max_length=100)
 
     def __str__(self):
