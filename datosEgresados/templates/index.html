@@ -5,26 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mstepper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mstepper.min.js' %}"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
     <div class="contenedor_padre">
         <form action="">
-            <div class="form1">
-                
-            </div>
-            <div class="form2">
-
-            </div>
-            <div class="form3">
-
-            </div>
-            <div class="form4">
-                
-            </div>
-            <div class="form5">
-
-            </div>
+            <ul class="stepper horizontal">
+                <li class="step active col s6">
+                   <div class="step-title waves-effect">Datos Personales</div>
+                   <div class="step-content">
+                       <h4>Datos Personales</h4>
+                        <div class="row">    
+                            <div class="input-field col s6">
+                                <input placeholder=""  type="text" class="validate">
+                                <label for="first_name">Primer Apellido</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder=""  type="text" class="validate">
+                                <label for="first_name">Segundo Apellido</label>
+                            </div>  
+                        </div>
+                        <div class="row">    
+                                <div class="input-field col s6">
+                                    <input placeholder=""  type="text" class="validate">
+                                    <label for="first_name">Nombre</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder=""  type="text" class="datepicker">
+                                    <label for="first_name">Fecha Nacimiento</label>
+                                </div>  
+                        </div> 
+                        <div class="row">    
+                            <div class="input-field col s6">
+                                <input placeholder=""  type="text" class="validate">
+                                <label for="first_name">Lugar de Nacimiento</label>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <h5>Datos de Residencia</h5>
+                        </div>
+                        <div class="row">       
+                                <div class="input-field col s3">
+                                        <select>
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1">Option 1</option>
+                                          <option value="2">Option 2</option>
+                                          <option value="3">Option 3</option>
+                                        </select>
+                                        <label>Pais</label>
+                                </div>
+                                <div class="input-field col s3">
+                                        <select>
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1">Option 1</option>
+                                          <option value="2">Option 2</option>
+                                          <option value="3">Option 3</option>
+                                        </select>
+                                        <label>Departamento</label>
+                                </div>
+                                <div class="input-field col s3">
+                                        <select>
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1">Option 1</option>
+                                          <option value="2">Option 2</option>
+                                          <option value="3">Option 3</option>
+                                        </select>
+                                        <label>Ciudad</label>
+                                </div>
+                        </div>
+                        <div class="row">
+                            <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                        </div>
+                    </div>        
+                    
+                </li>
+                <li class="step">
+                    <div class="step-title waves-effect">Datos Academicos</div>
+                    <div class="step-content">
+                     <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                     <label for="first_name">First Name</label>
+                       <div class="step-actions">
+                          <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                       </div>
+                    </div>   
+                </li>
+                <li class="step">
+                    <div class="step-title waves-effect">Datos Laborales</div>
+                    <div class="step-content">
+                     <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                     <label for="first_name">First Name</label>
+                       <div class="step-actions">
+                          <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                       </div>
+                    </div>   
+                </li>
+                <li class="step">
+                    <div class="step-title waves-effect">Publicaciones</div>
+                    <div class="step-content">
+                     <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                     <label for="first_name">First Name</label>
+                       <div class="step-actions">
+                          <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                       </div>
+                    </div>   
+                </li>
+                <li class="step">
+                    <div class="step-title waves-effect">Reconocimientos</div>
+                    <div class="step-content">
+                     <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                     <label for="first_name">First Name</label>
+                       <div class="step-actions">
+                          <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                       </div>
+                    </div>   
+                </li>
+                <li class="step">
+                    <div class="step-title waves-effect">Participación en Redes</div>
+                    <div class="step-content">
+                     <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                     <label for="first_name">First Name</label>
+                       <div class="step-actions">
+                          <button class="waves-effect waves-dark btn next-step">CONTINUAR</button>
+                       </div>
+                    </div>   
+                </li>
+             </ul>
         </form>
     </div>
+    <script>
+        var stepper = document.querySelector('.stepper');
+        var stepperInstace = new MStepper(stepper, {
+           // options
+           firstActive: 0 // this is the default
+        })
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, []);
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, []);
+        });
+     </script>
 </body>
 </html>

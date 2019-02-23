@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from .models import Egresado
 
-# Create your views here.
+# Create your views here.   
+
+def appEgresados(request):
+    egresados = Egresado.objects.all()
+    return render(request, 'index.html', {'egresados':egresados})
 
 '''def add_element(request,pk):
     service = get_object_or_404(Service, id=pk)

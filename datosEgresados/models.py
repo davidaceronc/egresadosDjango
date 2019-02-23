@@ -111,7 +111,7 @@ class Egresado(models.Model):
     ext = models.IntegerField()
     cargo = models.CharField(max_length=50)
     id_rango_salarial = models.ForeignKey(RangoSalarial,on_delete="PROTECTED")
-    id_experiencia = models.IntegerField(choises = experiencia)
+    id_experiencia = models.IntegerField(choices=experiencia)
     nombre_jefe = models.CharField(max_length=100)
 
     def __str__(self):
