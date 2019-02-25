@@ -163,7 +163,7 @@ class Publicacion(models.Model):
     def __str__(self):
         return self.titulo_publicacion
 
-class Reconocimientos(models.Model):
+class Reconocimiento(models.Model):
     instituciones = (
         (1, 'SENA'),
         (2, 'USB'),
@@ -177,7 +177,7 @@ class Reconocimientos(models.Model):
     def __str__(self):
         return self.titulo_reconocimiento
 
-class Participaciones(models.Model):
+class Participacion(models.Model):
     redes = (
         (1, 'Asociación Artistica'),
         (2, 'Asociación Téctnica/Tecnológica'),
